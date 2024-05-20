@@ -10,13 +10,29 @@
     <div class="header">
         <h1>Generating and Counting Integer Partition</h1>
         <div class="nav">
-            <button onclick="showGenerating()">Generating</button>
-            <button onclick="showCounting()">Counting</button>
+            <div class="dropdown">
+                <button class="dropbtn">Generating</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="showGenerating('Euler')">Euler Identity</a>
+                    <a href="#" onclick="showGenerating('RogersRamanujan')">Rogers-Ramanujan Identity</a>
+                    <a href="#" onclick="showGenerating('Schur')">Schur Identity</a>
+                    <a href="#" onclick="showGenerating('GoellnitzGordon')">2nd Göllnitz-Gordon Identity</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Counting</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="showCounting('Euler')">Euler Identity</a>
+                    <a href="#" onclick="showCounting('RogersRamanujan')">Rogers-Ramanujan Identity</a>
+                    <a href="#" onclick="showCounting('Schur')">Schur Identity</a>
+                    <a href="#" onclick="showCounting('GoellnitzGordon')">2nd Göllnitz-Gordon Identity</a>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="content" id="generatingContent" style="display: none;">
-        <h2>Generating Unique Partitions</h2>
+        <h2 id="generatingTitle">Generating Partitions</h2>
         <label for="numberInputGen">Enter the number:</label>
         <input type="number" id="numberInputGen" min="0">
         <button onclick="displayGenerating()">Generate Partitions</button>
@@ -24,11 +40,11 @@
     </div>
 
     <div class="content" id="countingContent" style="display: none;">
-        <h2>Counting Integer Partitions</h2>
-        <label for="numberInput">Enter the number:</label>
-        <input type="number" id="numberInput" min="0">
-        <button onclick="displayPartitions()">Calculate Partitions</button>
-        <p id="result"></p>
+        <h2 id="countingTitle">Counting Integer Partitions</h2>
+        <label for="numberInputCount">Enter the number:</label>
+        <input type="number" id="numberInputCount" min="0">
+        <button onclick="displayCounting()">Count Partitions</button>
+        <p id="resultCount"></p>
     </div>
 
     <script src="script.js"></script>
