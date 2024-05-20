@@ -153,7 +153,7 @@ function isValidPartitionGoellnitzGordon(p, n) {
         if (p[i] < 3) {
             return false;
         }
-        if ((i > 0 && p[i - 1] - p[i] < 2) || (i > 0 && p[i] % 2 == 0 && p[i - 1] % 2 == 0)) {
+        if ((i > 0 && p[i - 1] - p[i] < 2) || ((i > 0 && p[i] % 2 == 0 && p[i - 1] % 2 == 0) && p[i - 1] - p[i] == 2 )) {
             return false;
         }
     }
